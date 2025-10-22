@@ -68,7 +68,7 @@ def 形态切换(形态):
 hzf.code(code, language="python")
 
 hzf.text("附上美图一张💟")
-image_path = "D:\\IMG20251020_114310.png"
+image_path = "IMG20251020_114310.png"
 hzf.image(image_path, caption="D盘JPG图片展示", use_column_width=True)
 hzf.markdown("---")
 hzf.markdown("**下一次任务预警：** :red[中午到底吃什么！！！]  \n**最后更新：** 2025-10-20  \n**系统状态：** 离线🙀 | 困意暴增 | 随时睡觉")
