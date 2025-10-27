@@ -1,13 +1,15 @@
 import streamlit as st
 
+st.set_page_config(page_title="个人简历生成器", page_icon="", layout="wide")
+
 # 页面设置
-st.title("个人简历生成器")
+st.title("个😺简历生成")
 
 # 左右分栏：左侧输入，右侧预览
-c1,c2 = st.columns(2)
+c1,c2 = st.columns([1,2])
 
 with c1:
-    st.subheader("个人信息表单")
+    st.subheader("个😺信息表单")
     
     # 基本信息
     name = st.text_input("哈基米名称😺：")
@@ -25,34 +27,40 @@ with c1:
     
     # 专业技能
     skills = st.multiselect("专业技能", 
-                           ["Python", "HTML/CSS", "JavaScript", "SQL", "Excel", "PPT"])
+                           ["睡觉", "吃饭", "打瓦", "跑刀", "干农活", "偷吃"])
     exp = st.slider("工作经验(年)", 0, 20, 3)
 
    
     start_color, end_color = st.select_slider(
     '选择波长的颜色范围',
-    options=['吃饭', '打瓦😼', '干农活', '跑刀😼', '睡觉🐼', '哈气', '发呆'],
+    options = ['吃饭', '打瓦😼', '干农活', '跑刀😼', '睡觉🐼', '哈气', '发呆'],
     value=('吃饭', '睡觉🐼'))
 
 
     st.subheader("你爱咪🐱还是汪🐕")
-my_range = range(1, 21)
+    my_range = range(1, 21)
 
-numbers = st.select_slider('选择你的心动值😻', options=my_range, value=5)
+    numbers = st.select_slider('选择你的心动值😻', options=my_range, value=5)
 
-st.header('等下中午吃什么🙀')
-st.subheader('哈基米？？？')
+
 # 自定义format_func函数
-def my_format_func(option):
-    return f'吃{option}'
+    def my_format_func(option):
+        return f'{option}'
 
-options_1 = st.multiselect(
+    options_1 = st.multiselect(
     '选择你的午饭😻',
     ['烧鸭饭', '西安面馆', '重庆小面', 'KFC', '麦当当', '河南面馆'],
     ['烧鸭饭', 'KFC'],
     format_func=my_format_func,
     )
 
+
+    st.header('文件上传组件示例')
+    uploaded_file=st.file_uploader("选择一个webp文件")
+    if uploaded_file is not None:
+        bytes_data=uploaded_file.getvalue()
+        st.subheader('直接展示字节数据')
+        st.write(bytes_date)
 
 
 
@@ -92,7 +100,6 @@ with c2:
 
     st.write('午饭是:', options_1)
 
-    st.write('你选择了 ')
     st.header('请选择您的英雄')
     st.subheader('哈基米曼波')
     city = st.selectbox('哈基米突击：', ['橘', 'Three花', '梨花'], format_func=my_format_func, index=2)
@@ -106,7 +113,8 @@ with c2:
         st.write('你那软绵绵的咪就别配这么硬的曲了😼”')
 
 
-
+    st.header('等下中午吃什么🙀')
+    st.subheader('哈基米？？？')
 
 
 
